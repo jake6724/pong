@@ -12,13 +12,13 @@ func _ready():
 
 func on_player_point():
 	print("Player scored!")
-	get_tree().call_deferred("change_scene_to_file", "res://Scenes/main.tscn")
-	# get_tree().change_scene_to_file("res://Scenes/main.tscn")
+	ball.reset()
+	# get_tree().call_deferred("change_scene_to_file", "res://Scenes/main.tscn")
 
 func on_enemy_point():
 	print("Enemy scored!")
-	get_tree().call_deferred("change_scene_to_file", "res://Scenes/main.tscn")
-	# get_tree().change_scene_to_file("res://Scenes/main.tscn")
+	ball.reset()
+	# get_tree().call_deferred("change_scene_to_file", "res://Scenes/main.tscn")
 
 func _input(_event):
 	if Input.is_action_just_pressed("reset"):
