@@ -1,0 +1,43 @@
+[gd_scene load_steps=4 format=3 uid="uid://cma2n8hcbqaeq"]
+
+[ext_resource type="Texture2D" uid="uid://bh6xb8omkst" path="res://Art/border.png" id="1_lq7nq"]
+[ext_resource type="Texture2D" uid="uid://dicaq02pt13v8" path="res://Art/net.png" id="2_ra5jo"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_lq7nq"]
+size = Vector2(1920, 8)
+
+[node name="Arena" type="RigidBody2D"]
+gravity_scale = 0.0
+freeze = true
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(0, 7.75)
+rotation = -1.5708
+scale = Vector2(0.239001, 60)
+texture = ExtResource("1_lq7nq")
+centered = false
+
+[node name="Sprite2D2" type="Sprite2D" parent="."]
+position = Vector2(0, 1090)
+rotation = -1.5708
+scale = Vector2(0.239001, 60)
+texture = ExtResource("1_lq7nq")
+centered = false
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(960, 4)
+shape = SubResource("RectangleShape2D_lq7nq")
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="."]
+position = Vector2(960, 1086)
+shape = SubResource("RectangleShape2D_lq7nq")
+
+[node name="Sprite2D3" type="Sprite2D" parent="."]
+texture_filter = 1
+texture_repeat = 2
+position = Vector2(952, 8)
+scale = Vector2(0.55, 0.55)
+texture = ExtResource("2_ra5jo")
+centered = false
+region_enabled = true
+region_rect = Rect2(32, 64, 32, 2144)
