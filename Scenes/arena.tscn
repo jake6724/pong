@@ -1,14 +1,19 @@
-[gd_scene load_steps=4 format=3 uid="uid://cma2n8hcbqaeq"]
+[gd_scene load_steps=6 format=3 uid="uid://cma2n8hcbqaeq"]
 
 [ext_resource type="Texture2D" uid="uid://bh6xb8omkst" path="res://Art/border.png" id="1_lq7nq"]
+[ext_resource type="Script" uid="uid://d1drisdiwkpm2" path="res://Scripts/Arena.gd" id="1_nnts3"]
 [ext_resource type="Texture2D" uid="uid://dicaq02pt13v8" path="res://Art/net.png" id="2_ra5jo"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_lq7nq"]
 size = Vector2(1920, 8)
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_1v1nj"]
+size = Vector2(7.55476, 1074)
+
 [node name="Arena" type="RigidBody2D"]
 gravity_scale = 0.0
 freeze = true
+script = ExtResource("1_nnts3")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 position = Vector2(0, 7.75)
@@ -41,3 +46,18 @@ texture = ExtResource("2_ra5jo")
 centered = false
 region_enabled = true
 region_rect = Rect2(32, 64, 32, 2144)
+
+[node name="LeftGoal" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="LeftGoal"]
+position = Vector2(8, 544)
+rotation = -0.000829113
+scale = Vector2(0.5, 1)
+shape = SubResource("RectangleShape2D_1v1nj")
+
+[node name="RightGoal" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="RightGoal"]
+position = Vector2(1912, 544)
+rotation = -0.000829113
+shape = SubResource("RectangleShape2D_1v1nj")
