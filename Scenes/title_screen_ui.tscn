@@ -23,10 +23,12 @@ custom_minimum_size = Vector2(1920, 1080)
 offset_right = 40.0
 offset_bottom = 40.0
 mouse_filter = 2
+theme_override_constants/margin_bottom = 100
 
 [node name="VBoxContainer2" type="VBoxContainer" parent="MarginContainer"]
 layout_mode = 2
 mouse_filter = 2
+theme_override_constants/separation = 75
 
 [node name="RichTextLabel" type="RichTextLabel" parent="MarginContainer/VBoxContainer2"]
 custom_minimum_size = Vector2(752, 250)
@@ -39,11 +41,11 @@ text = "PONG"
 scroll_active = false
 
 [node name="ButtonsVbox" type="VBoxContainer" parent="MarginContainer/VBoxContainer2"]
-custom_minimum_size = Vector2(800, 1000)
 layout_mode = 2
 size_flags_horizontal = 4
-size_flags_vertical = 6
+size_flags_vertical = 2
 mouse_filter = 2
+theme_override_constants/separation = 20
 
 [node name="Button1" type="TextureButton" parent="MarginContainer/VBoxContainer2/ButtonsVbox"]
 custom_minimum_size = Vector2(400, 100)
@@ -159,11 +161,21 @@ theme_override_font_sizes/normal_font_size = 75
 text = "Practice"
 scroll_active = false
 
-[node name="ColorRect" type="ColorRect" parent="."]
+[node name="ModeDesc" type="RichTextLabel" parent="MarginContainer/VBoxContainer2"]
+custom_minimum_size = Vector2(1000, 200)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 10
+theme_override_fonts/normal_font = ExtResource("3_jbpma")
+theme_override_font_sizes/normal_font_size = 50
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Background" type="ColorRect" parent="."]
 z_index = -1
 custom_minimum_size = Vector2(1920, 0)
 offset_right = 1920.0
 offset_bottom = 40.0
-scale = Vector2(1, 27.12)
+scale = Vector2(1.00168, 26.8599)
 mouse_filter = 2
 color = Color(0.000385186, 0, 0.0369439, 1)

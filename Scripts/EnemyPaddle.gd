@@ -2,10 +2,10 @@ class_name EnemyPaddle
 extends CharacterBody2D
 
 @export var ball: Ball
-var speed: float = 500
+var speed: float = GlobalData.enemy_speed
 var move_threshold: float
-var range_min: float = 10.0
-var range_max: float = 100.0 # Changing this and speed make the enemy better or worse
+var move_threshold_min: float =  GlobalData.enemy_move_threshold_min
+var move_threshold_max: float = GlobalData.enemy_move_threshold_max
 var frame_count = 1
 var rng: RandomNumberGenerator = RandomNumberGenerator.new()
 
@@ -39,4 +39,4 @@ func _physics_process(delta):
 	frame_count += 1
 
 func set_new_move_threshold() -> void:
-	move_threshold = rng.randf_range(range_min, range_max)
+	move_threshold = rng.randf_range(move_threshold_min, move_threshold_max)
