@@ -15,29 +15,29 @@ gravity_scale = 0.0
 freeze = true
 script = ExtResource("1_nnts3")
 
-[node name="Sprite2D" type="Sprite2D" parent="."]
+[node name="TopLine" type="Sprite2D" parent="."]
 position = Vector2(0, 7.75)
 rotation = -1.5708
 scale = Vector2(0.239001, 60)
 texture = ExtResource("1_lq7nq")
 centered = false
 
-[node name="Sprite2D2" type="Sprite2D" parent="."]
+[node name="BottomLine" type="Sprite2D" parent="."]
 position = Vector2(0, 1090)
 rotation = -1.5708
 scale = Vector2(0.239001, 60)
 texture = ExtResource("1_lq7nq")
 centered = false
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+[node name="TopCollision" type="CollisionShape2D" parent="."]
 position = Vector2(960, 4)
 shape = SubResource("RectangleShape2D_lq7nq")
 
-[node name="CollisionShape2D2" type="CollisionShape2D" parent="."]
+[node name="BottomCollision" type="CollisionShape2D" parent="."]
 position = Vector2(960, 1086)
 shape = SubResource("RectangleShape2D_lq7nq")
 
-[node name="Sprite2D3" type="Sprite2D" parent="."]
+[node name="CenterLine" type="Sprite2D" parent="."]
 texture_filter = 1
 texture_repeat = 2
 position = Vector2(952, 8)
@@ -49,7 +49,7 @@ region_rect = Rect2(32, 64, 32, 2144)
 
 [node name="LeftGoal" type="Area2D" parent="."]
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="LeftGoal"]
+[node name="LeftGoalCollision" type="CollisionShape2D" parent="LeftGoal"]
 position = Vector2(8, 544)
 rotation = -0.000829113
 scale = Vector2(0.5, 1)
@@ -57,7 +57,7 @@ shape = SubResource("RectangleShape2D_1v1nj")
 
 [node name="RightGoal" type="Area2D" parent="."]
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="RightGoal"]
+[node name="RightGoalCollision" type="CollisionShape2D" parent="RightGoal"]
 position = Vector2(1912, 544)
 rotation = -0.000829113
 shape = SubResource("RectangleShape2D_1v1nj")

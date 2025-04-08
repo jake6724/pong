@@ -20,16 +20,18 @@ layout_mode = 2
 size_flags_horizontal = 4
 size_flags_vertical = 0
 
-[node name="Label" type="Label" parent="MarginContainer/HBoxContainer"]
+[node name="EnemyScore" type="Label" parent="MarginContainer/HBoxContainer"]
 layout_mode = 2
 size_flags_horizontal = 2
+theme_override_colors/font_color = Color(0.442911, 0.442911, 0.442911, 1)
 theme_override_font_sizes/font_size = 150
-text = "1"
+text = "0"
 
-[node name="Label2" type="Label" parent="MarginContainer/HBoxContainer"]
+[node name="PlayerScore" type="Label" parent="MarginContainer/HBoxContainer"]
 layout_mode = 2
+theme_override_colors/font_color = Color(0.443137, 0.443137, 0.443137, 1)
 theme_override_font_sizes/font_size = 150
-text = "2"
+text = "0"
 
 [node name="ColorRect" type="ColorRect" parent="."]
 z_index = -1

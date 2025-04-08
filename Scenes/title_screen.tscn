@@ -1,0 +1,23 @@
+[gd_scene load_steps=6 format=3 uid="uid://sc0jgo6h80sg"]
+
+[ext_resource type="PackedScene" uid="uid://bukmjx05o3e10" path="res://Scenes/ball.tscn" id="1_05l2w"]
+[ext_resource type="Script" uid="uid://berlweyg2vpnm" path="res://Scripts/TitleScreen.gd" id="1_hafda"]
+[ext_resource type="PackedScene" uid="uid://cma2n8hcbqaeq" path="res://Scenes/arena.tscn" id="2_hafda"]
+[ext_resource type="PackedScene" uid="uid://c71mtivsph8vq" path="res://Scenes/enemy_paddle.tscn" id="3_tpml5"]
+[ext_resource type="PackedScene" uid="uid://b6gy1upl6rgeh" path="res://Scenes/title_screen_ui.tscn" id="5_55kwv"]
+
+[node name="TitleScreen" type="Node2D"]
+script = ExtResource("1_hafda")
+
+[node name="Ball" parent="." instance=ExtResource("1_05l2w")]
+position = Vector2(960, 560)
+
+[node name="Arena" parent="." instance=ExtResource("2_hafda")]
+
+[node name="EnemyPaddle" parent="." instance=ExtResource("3_tpml5")]
+position = Vector2(32, 528)
+
+[node name="EnemyPaddle2" parent="." instance=ExtResource("3_tpml5")]
+position = Vector2(1880, 528)
+
+[node name="TitleScreenUI" parent="." instance=ExtResource("5_55kwv")]

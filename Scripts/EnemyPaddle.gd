@@ -5,7 +5,7 @@ extends CharacterBody2D
 var speed: float = 500
 var move_threshold: float
 var range_min: float = 10.0
-var range_max: float = 100.0
+var range_max: float = 100.0 # Changing this and speed make the enemy better or worse
 var frame_count = 1
 var rng: RandomNumberGenerator = RandomNumberGenerator.new()
 
@@ -19,9 +19,9 @@ func _physics_process(delta):
 	var target_y_velocity: float
 
 	# if ball.position.y < (position.y - move_threshold):
-	# 	velocity.y = -speed
+	# 	velocity.y = -speed * delta * 60
 	# elif ball.position.y > (position.y + move_threshold):
-	# 	velocity.y = speed
+	# 	velocity.y = speed * delta * 60
 	# else:
 	# 	velocity.y = 0
 
@@ -32,7 +32,7 @@ func _physics_process(delta):
 	else:
 		target_y_velocity = 0
 
-	velocity.y = lerp(velocity.y, target_y_velocity, delta * 5)
+	velocity.y = lerp(velocity.y, target_y_velocity, delta * 10)
 
 
 	move_and_slide()

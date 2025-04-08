@@ -3,7 +3,7 @@ extends RigidBody2D
 
 var direction: Vector2 = Vector2()
 var speed: float = 1500
-var initial_speed: float = speed / 2 
+var initial_speed: float = speed * .33
 var active_speed: float = initial_speed
 var initial_collision: bool = true
 var previous_collision: KinematicCollision2D
