@@ -18,11 +18,8 @@ func _ready():
 	add_child(audio_player)
 	audio_player.stream = bounce_sound
 	audio_player.volume_db = -17
-	# audio_player.bus = "Ball"
-	# ball_audio_bus_index = AudioServer.get_bus_index("Ball")
 
-	# var effect = AudioServer.get_bus_effect(ball_audio_bus_index, 0)
-	# effect.pitch_scale = 1.0
+	change_palette()
 
 func _process(delta):
 	if previous_collision:
@@ -58,3 +55,6 @@ func reset() -> void:
 	position = Vector2(960.0, 560.0)
 	direction = get_initial_direction()
 	active_speed = initial_speed
+
+func change_palette() -> void:
+	modulate = GlobalData.active_palette["object"]

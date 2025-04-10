@@ -17,7 +17,7 @@ func _ready():
 	music_player.volume_db = -15
 	music_player.finished.connect(on_music_end)
 	add_child(music_player)
-	music_player.play()
+	#music_player.play()
 
 	click_player = AudioStreamPlayer.new()
 	click_player.stream = click
@@ -27,6 +27,11 @@ func _ready():
 func on_music_end():
 	music_player.play()
 
-# func play_click():
-# 	music_player.stream = click
-# 	music_player.play()
+var palettes: Dictionary = {
+	"Default": {"object": Color.WHITE, "background": Color.BLACK},
+	"red": {"object": Color.BLACK, "background": Color.WHITE},
+	"blue": {"object": Color.BLACK, "background": Color.WHITE},
+	"Green": {"object": Color.GREEN, "background": Color.WHITE},
+}
+
+var active_palette: Dictionary = palettes["Default"]

@@ -58,6 +58,7 @@ texture_normal = ExtResource("2_w3mym")
 texture_hover = ExtResource("3_36amk")
 
 [node name="Label" type="RichTextLabel" parent="MarginContainer/VBoxContainer2/ButtonsVbox/Button1"]
+z_index = 5
 custom_minimum_size = Vector2(295, 67)
 layout_mode = 1
 anchors_preset = 8
