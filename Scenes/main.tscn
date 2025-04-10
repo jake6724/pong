@@ -1,4 +1,4 @@
-[gd_scene load_steps=7 format=3 uid="uid://3icxunb6w6wv"]
+[gd_scene load_steps=8 format=3 uid="uid://3icxunb6w6wv"]
 
 [ext_resource type="Script" uid="uid://dhsu5rtypekn0" path="res://Scripts/Main.gd" id="1_jjgbg"]
 [ext_resource type="PackedScene" uid="uid://gxekvn5cnmff" path="res://Scenes/paddle.tscn" id="2_bo1nx"]
@@ -6,6 +6,7 @@
 [ext_resource type="PackedScene" uid="uid://cma2n8hcbqaeq" path="res://Scenes/arena.tscn" id="4_jjvhh"]
 [ext_resource type="PackedScene" uid="uid://c71mtivsph8vq" path="res://Scenes/enemy_paddle.tscn" id="5_kry3j"]
 [ext_resource type="PackedScene" uid="uid://jx2jmwsmjn5w" path="res://Scenes/score_ui.tscn" id="6_21xkr"]
+[ext_resource type="PackedScene" uid="uid://uds3rbokhk7s" path="res://Scenes/pause_ui.tscn" id="7_6bp64"]
 
 [node name="Main" type="Node2D"]
 script = ExtResource("1_jjgbg")
@@ -21,5 +22,9 @@ position = Vector2(960, 560)
 [node name="EnemyPaddle" parent="." instance=ExtResource("5_kry3j")]
 position = Vector2(32, 528)
 
-[node name="ScoreUI" parent="." instance=ExtResource("6_21xkr")]
-z_index = -1
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="ScoreUI" parent="CanvasLayer" instance=ExtResource("6_21xkr")]
+
+[node name="PauseUI" parent="CanvasLayer" instance=ExtResource("7_6bp64")]
+visible = false

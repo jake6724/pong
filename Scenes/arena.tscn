@@ -1,8 +1,9 @@
-[gd_scene load_steps=6 format=3 uid="uid://cma2n8hcbqaeq"]
+[gd_scene load_steps=7 format=3 uid="uid://cma2n8hcbqaeq"]
 
 [ext_resource type="Texture2D" uid="uid://bh6xb8omkst" path="res://Art/border.png" id="1_lq7nq"]
 [ext_resource type="Script" uid="uid://d1drisdiwkpm2" path="res://Scripts/Arena.gd" id="1_nnts3"]
 [ext_resource type="Texture2D" uid="uid://dicaq02pt13v8" path="res://Art/net.png" id="2_ra5jo"]
+[ext_resource type="Texture2D" uid="uid://cxy1pkigvf4e7" path="res://Art/background.png" id="4_1v1nj"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_lq7nq"]
 size = Vector2(1920, 8)
@@ -61,3 +62,8 @@ shape = SubResource("RectangleShape2D_1v1nj")
 position = Vector2(1912, 544)
 rotation = -0.000829113
 shape = SubResource("RectangleShape2D_1v1nj")
+
+[node name="Background" type="Sprite2D" parent="."]
+z_index = -999
+texture = ExtResource("4_1v1nj")
+centered = false
