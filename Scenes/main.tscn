@@ -1,4 +1,4 @@
-[gd_scene load_steps=8 format=3 uid="uid://3icxunb6w6wv"]
+[gd_scene load_steps=9 format=3 uid="uid://3icxunb6w6wv"]
 
 [ext_resource type="Script" uid="uid://dhsu5rtypekn0" path="res://Scripts/Main.gd" id="1_jjgbg"]
 [ext_resource type="PackedScene" uid="uid://gxekvn5cnmff" path="res://Scenes/paddle.tscn" id="2_bo1nx"]
@@ -7,6 +7,7 @@
 [ext_resource type="PackedScene" uid="uid://c71mtivsph8vq" path="res://Scenes/enemy_paddle.tscn" id="5_kry3j"]
 [ext_resource type="PackedScene" uid="uid://jx2jmwsmjn5w" path="res://Scenes/score_ui.tscn" id="6_21xkr"]
 [ext_resource type="PackedScene" uid="uid://uds3rbokhk7s" path="res://Scenes/pause_ui.tscn" id="7_6bp64"]
+[ext_resource type="PackedScene" uid="uid://cw7dt8wn5yucl" path="res://Scenes/setting_ui.tscn" id="8_344ge"]
 
 [node name="Main" type="Node2D"]
 script = ExtResource("1_jjgbg")
@@ -27,4 +28,7 @@ position = Vector2(32, 528)
 [node name="ScoreUI" parent="CanvasLayer" instance=ExtResource("6_21xkr")]
 
 [node name="PauseUI" parent="CanvasLayer" instance=ExtResource("7_6bp64")]
+visible = false
+
+[node name="SettingUI" parent="CanvasLayer" instance=ExtResource("8_344ge")]
 visible = false

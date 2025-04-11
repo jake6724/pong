@@ -14,7 +14,7 @@ func _ready():
 	left_goal.body_entered.connect(on_enemy_goal_entered)
 	right_goal.body_entered.connect(on_player_goal_entered)
 
-	change_palette()
+	set_palette()
 
 func on_enemy_goal_entered(body):
 	if body is Ball:
@@ -24,7 +24,7 @@ func on_player_goal_entered(body):
 	if body is Ball:
 		enemy_point.emit("enemy")
 
-func change_palette() -> void:
+func set_palette() -> void:
 	center_line.modulate = GlobalData.active_palette["object"]
 	top_line.modulate = GlobalData.active_palette["object"]
 	bottom_line.modulate = GlobalData.active_palette["object"]

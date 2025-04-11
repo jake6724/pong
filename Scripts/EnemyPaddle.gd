@@ -14,7 +14,7 @@ func _ready():
 	motion_mode = MOTION_MODE_FLOATING
 	
 	# Set palette
-	change_palette()
+	set_palette()
 
 func _physics_process(delta):
 	# Move up towards ball
@@ -43,5 +43,5 @@ func _physics_process(delta):
 func set_new_move_threshold() -> void:
 	move_threshold = rng.randf_range(move_threshold_min, move_threshold_max)
 
-func change_palette() -> void:
+func set_palette() -> void:
 	modulate = GlobalData.active_palette["object"]

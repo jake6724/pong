@@ -21,7 +21,7 @@ func _ready():
 
 	click_player = AudioStreamPlayer.new()
 	click_player.stream = click
-	click_player.volume_db = -10
+	click_player.volume_db = -7
 	add_child(click_player)
 
 func on_music_end():
@@ -32,6 +32,20 @@ var palettes: Dictionary = {
 	"red": {"object": Color.BLACK, "background": Color.WHITE},
 	"blue": {"object": Color.BLACK, "background": Color.WHITE},
 	"Green": {"object": Color.GREEN, "background": Color.WHITE},
+	"Cool Grape": {"object": "#4C2394", "background": "#D3BBFC"},
+	"Creamy Matcha": {"object": "#41512B", "background": "#DAEDBE"},
+	"Marvelous Blueberry": {"object": "#4C2394", "background": "#D3BBFC"},
+	"Grass and sky": {"object": "#4C2394", "background": "#D3BBFC"},
+	"Maple Candy": {"object": "#4C2394", "background": "#D3BBFC"},
+	"Morning coffee": {"object": "#4C2394", "background": "#D3BBFC"},
+	"Pumpkin realness": {"object": "#4C2394", "background": "#D3BBFC"},
+	"Cranberry dream": {"object": "#4C2394", "background": "#D3BBFC"},
+	"Castle Knight": {"object": "#4C2394", "background": "#D3BBFC"},
+	"Love in the air": {"object": "#4C2394", "background": "#D3BBFC"},
+	"Mermaid hideaway": {"object": "#4C2394", "background": "#D3BBFC"},
+	"Midnight rain": {"object": "#4C2394", "background": "#D3BBFC"},
+	"Pigeon inspired": {"object": "#4C2394", "background": "#D3BBFC"},
 }
 
-var active_palette: Dictionary = palettes["Default"]
+var active_palette_key = "Creamy Matcha"
+var active_palette: Dictionary = palettes[active_palette_key]

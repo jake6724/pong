@@ -1,6 +1,8 @@
 class_name PauseUI
 extends Control
 
+@onready var title_card: RichTextLabel = $MarginContainer/VBoxContainer2/TitleCard
+
 @onready var buttons: VBoxContainer = $MarginContainer/VBoxContainer2/ButtonsVbox
 @onready var button_1: TextureButton = $MarginContainer/VBoxContainer2/ButtonsVbox/Button1
 @onready var button_2: TextureButton = $MarginContainer/VBoxContainer2/ButtonsVbox/Button2
@@ -9,6 +11,7 @@ extends Control
 @onready var button_1_label: RichTextLabel = $MarginContainer/VBoxContainer2/ButtonsVbox/Button1/Label
 @onready var button_2_label: RichTextLabel = $MarginContainer/VBoxContainer2/ButtonsVbox/Button2/Label
 @onready var button_3_label: RichTextLabel = $MarginContainer/VBoxContainer2/ButtonsVbox/Button3/Label
+
 var main
 
 func _ready():
@@ -23,17 +26,17 @@ func _ready():
 		b_label.bbcode_enabled = true
 
 	buttons.z_index = 999
-	change_palette()
+	set_palette()
 
 func on_button_entered(button: TextureButton):
 	var label: RichTextLabel = button.get_node("Label")
 	label.text = label.get_parsed_text()
-	label.text = "[color=" + str(GlobalData.active_palette["background"].to_html()) + "]" + label.text
+	label.text = "[color=" + str(GlobalData.active_palette["background"]) + "]" + label.text
 
 func on_button_exited(button: TextureButton):
 	var label: RichTextLabel = button.get_node("Label")
 	label.text = label.get_parsed_text()
-	label.text = "[color=" + str(GlobalData.active_palette["object"].to_html()) + "]" + label.text
+	label.text = "[color=" + str(GlobalData.active_palette["object"]) + "]" + label.text
 
 func on_button_pressed(button: TextureButton):
 	GlobalData.click_player.play()
@@ -41,7 +44,7 @@ func on_button_pressed(button: TextureButton):
 		button_1:
 			main.unpause_game()
 		button_2:
-			pass
+			main.show_settings()
 		button_3:
 			main.go_to_title_menu()
 
@@ -51,7 +54,8 @@ func _input(_event):
 			main.unpause_game()
 			accept_event() # Prevent input in main from continuing to process this input
 
-func change_palette():
+func set_palette():
+	title_card.self_modulate = GlobalData.active_palette["object"]
 	button_1.self_modulate = GlobalData.active_palette["object"]
 	button_2.self_modulate = GlobalData.active_palette["object"]
 	button_3.self_modulate = GlobalData.active_palette["object"]

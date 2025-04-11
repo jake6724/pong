@@ -1,0 +1,127 @@
+[gd_scene load_steps=8 format=3 uid="uid://cw7dt8wn5yucl"]
+
+[ext_resource type="FontFile" uid="uid://rbq7vln3ekon" path="res://Art/Minecraft_font.ttf" id="1_4xwet"]
+[ext_resource type="Script" uid="uid://b5spas6ar7drs" path="res://Scripts/SettingUI.gd" id="1_twynv"]
+[ext_resource type="Texture2D" uid="uid://cm52r530p3cf4" path="res://Art/menu_button_default.png" id="2_0c5n8"]
+[ext_resource type="FontFile" uid="uid://b0wy3dncaupb" path="res://Art/GamiliaPixel-Regular-BF6652b145dc491.otf" id="4_elhf3"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_a5h0x"]
+texture = ExtResource("2_0c5n8")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_elhf3"]
+texture = ExtResource("2_0c5n8")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_0c5n8"]
+texture = ExtResource("2_0c5n8")
+texture_margin_top = 12.0
+
+[node name="SettingUI" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_twynv")
+
+[node name="MarginContainer" type="MarginContainer" parent="."]
+custom_minimum_size = Vector2(800, 400)
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+theme_override_constants/margin_top = 135
+
+[node name="TitleCard" type="RichTextLabel" parent="MarginContainer"]
+custom_minimum_size = Vector2(879.99, 250)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 2
+theme_override_fonts/normal_font = ExtResource("4_elhf3")
+theme_override_font_sizes/normal_font_size = 250
+text = "Paused"
+scroll_active = false
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+mouse_filter = 2
+theme_override_constants/separation = 35
+
+[node name="HBoxContainer" type="HBoxContainer" parent="MarginContainer/VBoxContainer"]
+layout_mode = 2
+mouse_filter = 2
+
+[node name="MusicLabel" type="Label" parent="MarginContainer/VBoxContainer/HBoxContainer"]
+texture_filter = 1
+layout_mode = 2
+size_flags_horizontal = 4
+theme_override_fonts/font = ExtResource("1_4xwet")
+theme_override_font_sizes/font_size = 50
+text = "Music Volume: "
+
+[node name="MusicSlider" type="HSlider" parent="MarginContainer/VBoxContainer/HBoxContainer"]
+custom_minimum_size = Vector2(300, 0)
+layout_mode = 2
+size_flags_vertical = 4
+value = 100.0
+
+[node name="MusicLevel" type="Label" parent="MarginContainer/VBoxContainer/HBoxContainer"]
+texture_filter = 1
+layout_mode = 2
+size_flags_horizontal = 4
+theme_override_fonts/font = ExtResource("1_4xwet")
+theme_override_font_sizes/font_size = 25
+text = "100"
+
+[node name="HBoxContainer2" type="HBoxContainer" parent="MarginContainer/VBoxContainer"]
+layout_mode = 2
+mouse_filter = 2
+
+[node name="MasterLabel" type="Label" parent="MarginContainer/VBoxContainer/HBoxContainer2"]
+texture_filter = 1
+layout_mode = 2
+theme_override_fonts/font = ExtResource("1_4xwet")
+theme_override_font_sizes/font_size = 50
+text = "Game Volume:"
+
+[node name="MasterSlider" type="HSlider" parent="MarginContainer/VBoxContainer/HBoxContainer2"]
+custom_minimum_size = Vector2(300, 0)
+layout_mode = 2
+size_flags_vertical = 4
+value = 100.0
+
+[node name="MasterLevel" type="Label" parent="MarginContainer/VBoxContainer/HBoxContainer2"]
+texture_filter = 1
+layout_mode = 2
+theme_override_fonts/font = ExtResource("1_4xwet")
+theme_override_font_sizes/font_size = 25
+text = "100"
+
+[node name="HBoxContainer3" type="HBoxContainer" parent="MarginContainer/VBoxContainer"]
+layout_mode = 2
+mouse_filter = 2
+
+[node name="PaletteLabel" type="Label" parent="MarginContainer/VBoxContainer/HBoxContainer3"]
+texture_filter = 1
+layout_mode = 2
+theme_override_fonts/font = ExtResource("1_4xwet")
+theme_override_font_sizes/font_size = 50
+text = "Palette: "
+
+[node name="PaletteOptionButton" type="OptionButton" parent="MarginContainer/VBoxContainer/HBoxContainer3"]
+custom_minimum_size = Vector2(300, 60)
+layout_mode = 2
+size_flags_horizontal = 2
+theme_override_fonts/font = ExtResource("1_4xwet")
+theme_override_font_sizes/font_size = 50
+theme_override_styles/hover = SubResource("StyleBoxTexture_a5h0x")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_elhf3")
+theme_override_styles/normal = SubResource("StyleBoxTexture_0c5n8")
+alignment = 1

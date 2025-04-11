@@ -6,7 +6,7 @@ var speed: float = 500
 func _ready():
 	motion_mode = MOTION_MODE_FLOATING
 	# Set palette
-	change_palette()
+	set_palette()
 
 func _physics_process(_delta):
 	if Input.is_action_pressed("up"):
@@ -19,5 +19,5 @@ func _physics_process(_delta):
 
 	move_and_slide()
 
-func change_palette() -> void:
+func set_palette() -> void:
 	modulate = GlobalData.active_palette["object"]

@@ -19,7 +19,7 @@ func _ready():
 	audio_player.stream = bounce_sound
 	audio_player.volume_db = -17
 
-	change_palette()
+	set_palette()
 
 func _process(delta):
 	if previous_collision:
@@ -56,5 +56,5 @@ func reset() -> void:
 	direction = get_initial_direction()
 	active_speed = initial_speed
 
-func change_palette() -> void:
+func set_palette() -> void:
 	modulate = GlobalData.active_palette["object"]

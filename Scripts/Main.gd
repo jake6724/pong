@@ -7,6 +7,7 @@ extends Node2D
 @onready var player_score: Label = $CanvasLayer/ScoreUI/MarginContainer/HBoxContainer/PlayerScore
 @onready var enemy_score: Label = $CanvasLayer/ScoreUI/MarginContainer/HBoxContainer/EnemyScore
 @onready var pause_ui: Control = $CanvasLayer/PauseUI
+@onready var settings_ui: Control = $CanvasLayer/SettingUI
 var max_goals: int = 7
 var audio_player: AudioStreamPlayer
 var click: AudioStream = preload("res://Audio/switch2.ogg")
@@ -18,8 +19,9 @@ func _ready():
 	arena.enemy_point.connect(on_goal)
 	Input.set_mouse_mode(Input.MOUSE_MODE_HIDDEN)
 
-	# Configure pause menu
+	# Configure UI's
 	pause_ui.main = self
+	settings_ui.main = self
 
 	# # Configure audio
 	# audio_player.stream = click
@@ -47,6 +49,7 @@ func _input(_event):
 			pause_game()
 
 func pause_game():
+	settings_ui.visible = false
 	arena.center_line.visible = false
 	Input.set_mouse_mode(Input.MOUSE_MODE_VISIBLE)
 	pause_ui.visible = true
@@ -64,3 +67,10 @@ func unpause_game():
 func go_to_title_menu():
 	unpause_game()
 	get_tree().call_deferred("change_scene_to_file", "res://Scenes/title_screen.tscn")
+
+func show_settings():
+	settings_ui.visible = true
+	pause_ui.visible = false
+
+func set_all_palettes():
+	pass

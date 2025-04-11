@@ -1,4 +1,7 @@
-[gd_scene format=3 uid="uid://jx2jmwsmjn5w"]
+[gd_scene load_steps=3 format=3 uid="uid://jx2jmwsmjn5w"]
+
+[ext_resource type="Script" uid="uid://3fyj8c53vee2" path="res://Scripts/ScoreUI.gd" id="1_slsms"]
+[ext_resource type="FontFile" uid="uid://rbq7vln3ekon" path="res://Art/Minecraft_font.ttf" id="2_7kmc4"]
 
 [node name="ScoreUI" type="Control"]
 layout_mode = 3
@@ -7,6 +10,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+script = ExtResource("1_slsms")
 
 [node name="MarginContainer" type="MarginContainer" parent="."]
 custom_minimum_size = Vector2(1920, 1080)
@@ -23,12 +27,12 @@ size_flags_vertical = 0
 [node name="EnemyScore" type="Label" parent="MarginContainer/HBoxContainer"]
 layout_mode = 2
 size_flags_horizontal = 2
-theme_override_colors/font_color = Color(0.442911, 0.442911, 0.442911, 1)
+theme_override_fonts/font = ExtResource("2_7kmc4")
 theme_override_font_sizes/font_size = 150
 text = "0"
 
 [node name="PlayerScore" type="Label" parent="MarginContainer/HBoxContainer"]
 layout_mode = 2
-theme_override_colors/font_color = Color(0.443137, 0.443137, 0.443137, 1)
+theme_override_fonts/font = ExtResource("2_7kmc4")
 theme_override_font_sizes/font_size = 150
 text = "0"

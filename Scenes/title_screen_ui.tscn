@@ -30,7 +30,7 @@ layout_mode = 2
 mouse_filter = 2
 theme_override_constants/separation = 75
 
-[node name="RichTextLabel" type="RichTextLabel" parent="MarginContainer/VBoxContainer2"]
+[node name="TitleCard" type="RichTextLabel" parent="MarginContainer/VBoxContainer2"]
 custom_minimum_size = Vector2(752, 250)
 layout_mode = 2
 size_flags_horizontal = 4
