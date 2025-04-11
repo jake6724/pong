@@ -39,7 +39,7 @@ func on_button_exited(button: TextureButton):
 	label.text = "[color=" + str(GlobalData.active_palette["object"]) + "]" + label.text
 
 func on_button_pressed(button: TextureButton):
-	GlobalData.click_player.play()
+	GlobalData.play_sound("click")
 	match button:
 		button_1:
 			main.unpause_game()
@@ -61,6 +61,9 @@ func set_palette():
 	button_3.self_modulate = GlobalData.active_palette["object"]
 
 	# Modulate would override the BBC tags that are use in `on_button_entered`; this does not.
+	button_1_label.text = button_1_label.get_parsed_text()
+	button_2_label.text = button_2_label.get_parsed_text()
+	button_3_label.text = button_3_label.get_parsed_text()
 	button_1_label.add_theme_color_override("default_color", GlobalData.active_palette["object"])
 	button_2_label.add_theme_color_override("default_color", GlobalData.active_palette["object"])
 	button_3_label.add_theme_color_override("default_color", GlobalData.active_palette["object"])

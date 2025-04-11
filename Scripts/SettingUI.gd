@@ -19,19 +19,20 @@ signal palette_changed
 
 func _ready():
 	process_mode = Node.PROCESS_MODE_WHEN_PAUSED
-	set_palette()
-
-	var popup: PopupMenu = palette_options.get_popup()
-	var item_stylebox = StyleBoxFlat.new()
-	item_stylebox.bg_color = GlobalData.active_palette["object"]
-	popup.add_theme_color_override("font", GlobalData.active_palette["object"])
-	popup.add_theme_font_size_override("font_size", 35)
-	popup.add_theme_stylebox_override("panel", item_stylebox)
 	
+	# Add palette names to palettes options button
 	for key in GlobalData.palettes:
 		palette_options.add_item(key)
 	palette_options.select(0)
-	palette_changed.emit() # Put new palette in this
+	
+	# Connect to signals
+	palette_options.item_selected.connect(on_palette_selected)
+	palette_options.pressed.connect(on_palette_options_pressed)
+
+	music_slider.drag_ended.connect(on_music_level_set)
+	master_slider.drag_ended.connect(on_master_level_set)
+
+	set_palette()
 
 func _input(_event):
 	if Input.is_action_just_pressed("pause"):
@@ -49,3 +50,27 @@ func set_palette():
 	master_level.modulate = GlobalData.active_palette["object"]
 	palette_label.modulate = GlobalData.active_palette["object"]
 	palette_options.modulate = GlobalData.active_palette["object"]
+
+	var popup: PopupMenu = palette_options.get_popup()
+	var item_stylebox = StyleBoxFlat.new()
+	item_stylebox.bg_color = GlobalData.active_palette["object"]
+	popup.add_theme_color_override("font", GlobalData.active_palette["object"])
+	popup.add_theme_font_size_override("font_size", 35)
+	popup.add_theme_stylebox_override("panel", item_stylebox)
+
+func on_palette_selected(index) -> void:
+	GlobalData.play_sound("click")
+	palette_changed.emit(palette_options.get_item_text(index))
+
+func on_palette_options_pressed() -> void:
+	GlobalData.play_sound("click")
+
+func on_music_level_set(value_changed: bool):
+	if value_changed:
+		music_level.text = str(int(music_slider.value))
+		GlobalData.set_music_level(music_slider.value)
+
+func on_master_level_set(value_changed: bool):
+	if value_changed:
+		master_level.text = str(int(master_slider.value))
+		GlobalData.set_master_level(master_slider.value)

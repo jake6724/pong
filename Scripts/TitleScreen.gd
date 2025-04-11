@@ -5,9 +5,6 @@ extends Node2D
 @onready var enemy_paddle_2 = $EnemyPaddle2
 @onready var arena = $Arena
 @onready var ui = $TitleScreenUI
-var audio_player: AudioStreamPlayer
-var click: AudioStream = preload("res://Audio/switch2.ogg")
-
 var max_goals: int = 7
 
 func _ready():
@@ -22,13 +19,8 @@ func _ready():
 
 	Input.set_mouse_mode(Input.MOUSE_MODE_VISIBLE)
 
-	# Configure audio
-	audio_player = AudioStreamPlayer.new()
-	audio_player.stream = click
-	add_child(audio_player)
-
 func on_mode_selected(mode: String):
-	GlobalData.click_player.play()
+	GlobalData.play_sound("click")
 	match mode:
 		"easy":
 			GlobalData.enemy_speed = 500
@@ -49,6 +41,8 @@ func on_mode_selected(mode: String):
 
 	get_tree().call_deferred("change_scene_to_file", "res://Scenes/main.tscn")
 
-
 func on_goal(_scorer: String):
 	ball.reset()
+
+func set_all_palettes():
+	ui.set_palette()
