@@ -24,7 +24,7 @@ func on_mode_selected(mode: String):
 	match mode:
 		"easy":
 			GlobalData.ball_speed = 800
-			GlobalData.enemy_speed = 500
+			GlobalData.enemy_speed = 400
 			GlobalData.enemy_move_threshold_min = 10.0
 			GlobalData.enemy_move_threshold_max = 100.0
 			GlobalData.current_game_mode = GlobalData.GameMode.EASY

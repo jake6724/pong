@@ -29,7 +29,7 @@ func _ready():
 	music_player.volume_db = base_music_level
 	music_player.finished.connect(on_music_end)
 	add_child(music_player)
-	#music_player.play()
+	music_player.play()
 
 	master_player = AudioStreamPlayer.new()
 	master_player.volume_db = base_master_level
