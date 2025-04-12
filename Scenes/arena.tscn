@@ -24,7 +24,7 @@ texture = ExtResource("1_lq7nq")
 centered = false
 
 [node name="BottomLine" type="Sprite2D" parent="."]
-position = Vector2(0, 1090)
+position = Vector2(2.76858e-05, 1079.66)
 rotation = -1.5708
 scale = Vector2(0.239001, 60)
 texture = ExtResource("1_lq7nq")
@@ -35,7 +35,7 @@ position = Vector2(960, 4)
 shape = SubResource("RectangleShape2D_lq7nq")
 
 [node name="BottomCollision" type="CollisionShape2D" parent="."]
-position = Vector2(960, 1086)
+position = Vector2(960, 1075.66)
 shape = SubResource("RectangleShape2D_lq7nq")
 
 [node name="CenterLine" type="Sprite2D" parent="."]
