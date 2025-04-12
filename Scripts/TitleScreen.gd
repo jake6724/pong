@@ -23,21 +23,29 @@ func on_mode_selected(mode: String):
 	GlobalData.play_sound("click")
 	match mode:
 		"easy":
+			GlobalData.ball_speed = 800
 			GlobalData.enemy_speed = 500
 			GlobalData.enemy_move_threshold_min = 10.0
 			GlobalData.enemy_move_threshold_max = 100.0
+			GlobalData.current_game_mode = GlobalData.GameMode.EASY
 		"med": 
-			GlobalData.enemy_speed = 500
+			GlobalData.ball_speed = 1200
+			GlobalData.enemy_speed = 650
 			GlobalData.enemy_move_threshold_min = 10.0
-			GlobalData.enemy_move_threshold_max = 100.0
+			GlobalData.enemy_move_threshold_max = 50.0
+			GlobalData.current_game_mode = GlobalData.GameMode.MED
 		"hard":
-			GlobalData.enemy_speed = 500
+			GlobalData.ball_speed = 1500
+			GlobalData.enemy_speed = 800
 			GlobalData.enemy_move_threshold_min = 10.0
-			GlobalData.enemy_move_threshold_max = 100.0
+			GlobalData.enemy_move_threshold_max = 20.0
+			GlobalData.current_game_mode = GlobalData.GameMode.HARD
 		"prac": 
-			GlobalData.enemy_speed = 500
-			GlobalData.enemy_move_threshold_min = 10.0
-			GlobalData.enemy_move_threshold_max = 100.0
+			GlobalData.ball_speed = 1500
+			GlobalData.enemy_speed = 0
+			GlobalData.enemy_move_threshold_min = 0 
+			GlobalData.enemy_move_threshold_max = 0
+			GlobalData.current_game_mode = GlobalData.GameMode.PRAC
 
 	get_tree().call_deferred("change_scene_to_file", "res://Scenes/main.tscn")
 

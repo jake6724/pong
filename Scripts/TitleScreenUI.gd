@@ -17,10 +17,10 @@ extends Control
 
 @onready var mode_desc: RichTextLabel = $MarginContainer/VBoxContainer2/ModeDesc
 
-var easy_desc: String = "Best for beginners. The ball will move slower and your opponent will be less skilled!"
-var med_desc: String = "Best for intermediate. The ball will move at a moderate speed and your opponent will be smarter!"
-var hard_desc: String = "Best for experienced players. The ball will move fast your opponent will NOT let you win easily!"
-var prac_desc: String = "Practice mode. Your opponent will never miss!"
+var easy_desc: String = "Slowest ball speed, unskilled opponent."
+var med_desc: String = "Moderate ball speed, moderately skilled opponent."
+var hard_desc: String = "Fastest ball speed, skilled opponent."
+var prac_desc: String = "Practice mode. Fastest ball speed, your opponent will never miss!"
 
 signal mode_selected
 

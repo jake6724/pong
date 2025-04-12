@@ -1,9 +1,15 @@
 extends Node
 
-var enemy_move_threshold_min: float
-var enemy_move_threshold_max: float
-var enemy_speed: float = 500
+var enemy_move_threshold_min: float = 10.0
+var enemy_move_threshold_max: float = 100.0
+var enemy_speed: float = 800
+var enemy_inital_speed: float = enemy_speed * .5
+var enemy_active_speed = enemy_inital_speed
+var ball_speed: float = 1500
+var ball_initial_speed: float = ball_speed * .5
 var is_paused: bool = false
+enum GameMode {EASY, MED, HARD, PRAC}
+var current_game_mode: GameMode
 
 # Audio
 var base_music_level: float = -15.0
@@ -23,7 +29,7 @@ func _ready():
 	music_player.volume_db = base_music_level
 	music_player.finished.connect(on_music_end)
 	add_child(music_player)
-	music_player.play()
+	#music_player.play()
 
 	master_player = AudioStreamPlayer.new()
 	master_player.volume_db = base_master_level
