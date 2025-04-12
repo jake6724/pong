@@ -32,6 +32,7 @@ func _ready():
 		b.pressed.connect(on_button_pressed.bind(b))
 		
 	buttons.z_index = 999
+	mode_desc.text = "No audio until you click the screen!"
 
 	set_palette()
 
